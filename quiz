@@ -1,0 +1,29 @@
+#Course III - week4 - quiz
+ 
+#1
+quiz1 <- read.csv("C3W4-1.csv")
+splitNames <- strsplit(names(quiz1),"wgtp")
+splitNames[123]
+#1 => "" "15"
+ 
+#2
+#WARNING!!! I've manually removed top rows and bottom rows from raw data which shouldn't be an appropriate...
+top190 <- read.csv("GDP2.csv")
+top190$Ndollars <- as.numeric(gsub(",","",top190$dollors))
+mean(top190$Ndollars, na.rm = TRUE)
+#2 => 377652.4
+ 
+#3
+grep("^United",top190$Economy)
+#3 => returns 3 result
+ 
+#4
+length(grep("[Ff]iscal year end.*[Jj]une",result$Special.Notes))
+#4 => 13
+ 
+ 
+#5
+install.packages("quantmod")
+library(quantmod)
+amzn <- getSymbols("AMZN",auto.assign=FALSE)
+#5 => return error message........ so I skipped this ^O^
